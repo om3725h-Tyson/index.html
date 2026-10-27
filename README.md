@@ -33,7 +33,7 @@ An elite, cinematic, single-page portfolio engineered with **React.js, Vite, Tai
 ## 📂 Project Structure
 
 ```
-Portfolio.html/
+index.html/
 ├── index.html                   # Runnable standalone single-page portfolio
 ├── css/
 │   └── styles.css               # Cosmic design system & glassmorphism engine
