@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Om - Elite Frontend Developer & UI/UX Designer. Cinematic space-themed interactive portfolio built with React, Vite, Tailwind CSS, Framer Motion, and HTML5 Canvas.">
+  <meta name="keywords" content="Frontend Developer, UI/UX Designer, Creative Technologist, Space Theme, Canvas, Framer Motion, React, Tailwind CSS">
+  <meta name="author" content="Om">
+  
+  <title>OM // Deep Cosmos Portfolio & Flight Deck</title>
+
+  <!-- OpenGraph / Social Meta -->
+  <meta property="og:title" content="OM // Deep Cosmos Portfolio">
+  <meta property="og:description" content="Cinematic space-themed interactive portfolio featuring dynamic canvas starfields, warp scroll acceleration, and glassmorphic nebula capsules.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon SVG (Cosmic Pulsar) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2322d3ee' stroke-width='2'%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3Cpath d='M12 2v2'/%3E%3Cpath d='M12 20v2'/%3E%3Cpath d='m4.93 4.93 1.41 1.41'/%3E%3Cpath d='m17.66 17.66 1.41 1.41'/%3E%3Cpath d='M2 12h2'/%3E%3Cpath d='M20 12h2'/%3E%3Cpath d='m6.34 17.66-1.41 1.41'/%3E%3Cpath d='m19.07 4.93-1.41 1.41'/%3E%3C/svg%3E">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Background Dynamic HTML5 Canvas Layer -->
+  <canvas id="space-canvas"></canvas>
+
+  <!-- Ambient Nebular Atmosphere Dust -->
+  <div class="nebula-underlay"></div>
+
+  <!-- FIXED / STICKY HEADER & NAVIGATION -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <!-- Top-Left Primary Brand Element -->
+      <a href="#hero" class="brand-emblem" aria-label="Return to Flight Deck Origin">
+        <div class="brand-pulsar" aria-hidden="true">
+          <div class="pulsar-dot"></div>
+          <div class="pulsar-ring"></div>
+        </div>
+        <span class="brand-name">OM</span>
+        <span class="brand-tag">CODE.NAV</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu-wrapper" role="navigation" aria-label="Primary Mission Coordinates">
+        <ul class="nav-menu">
+          <li><a href="#hero" class="nav-link active"><span class="nav-index">01.</span> ORIGIN</a></li>
+          <li><a href="#about" class="nav-link"><span class="nav-index">02.</span> DOSSIER</a></li>
+          <li><a href="#projects" class="nav-link"><span class="nav-index">03.</span> EXPEDITIONS</a></li>
+          <li><a href="#skills" class="nav-link"><span class="nav-index">04.</span> ARSENAL</a></li>
+          <li><a href="#contact" class="nav-link"><span class="nav-index">05.</span> TRANSMISSION</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Telemetry Actions -->
+      <div class="header-actions">
+        <!-- Interactive Web Audio Synthesizer Toggle -->
+        <button id="audio-toggle" class="audio-toggle-btn" aria-label="Toggle Cosmic Sound FX" title="Toggle Interstellar Audio Effects">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+          </svg>
+          <span class="audio-label">AUDIO: OFF</span>
+        </button>
+
+        <!-- CTA Terminal Access -->
+        <a href="#contact" class="cosmic-btn cosmic-btn-primary cosmic-btn-sm">
+          <span>INITIALIZE</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN APPLICATION CONTENT -->
+  <main class="app-container" role="main">
+
+    <!-- 1. HERO SECTION -->
+    <section id="hero" class="hero-section" aria-label="Hero Introduction">
+      <!-- Status Badge -->
+      <div class="hero-telemetry-badge">
+        <span class="status-dot-green"></span>
+        <span>SYSTEM ONLINE // ALL ENGINES OPERATIONAL</span>
+      </div>
+
+      <!-- Holographic Cinematic Title -->
+      <h1 class="hero-title">
+        <span class="gradient-text-cosmic">CRAFTING DIGITAL EXPERIENCES</span><br>
+        ACROSS THE WEB MULTIVERSE
+      </h1>
+
+      <!-- Mission Statement -->
+      <p class="hero-subtitle">
+        I am <strong>Om</strong>, an elite Frontend Architect &amp; UI/UX Designer engineering butter-smooth interactive interfaces, cinematic WebGL/Canvas micro-interactions, and high-performance resilient systems.
+      </p>
+
+      <!-- Call to Action Buttons -->
+      <div class="hero-actions">
+        <a href="#projects" class="cosmic-btn cosmic-btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+          </svg>
+          <span>EXPLORE EXPEDITIONS</span>
+        </a>
+        <a href="#contact" class="cosmic-btn cosmic-btn-outline">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+          </svg>
+          <span>INITIATE TRANSMISSION</span>
+        </a>
+      </div>
+
+      <!-- Constellation Scroll Indicator -->
+      <a href="#about" class="hero-scroll-indicator" aria-label="Scroll to engage hyperdrive">
+        <div class="mouse-indicator" aria-hidden="true">
+          <div class="mouse-wheel"></div>
+        </div>
+        <span>SCROLL TO ENGAGE HYPERDRIVE</span>
+      </a>
+    </section>
+
+    <!-- 2. ABOUT ME SECTION (ASTRONAUT DOSSIER) -->
+    <section id="about" class="section" aria-label="About Commander Dossier">
+      <div class="section-header">
+        <span class="section-tag">// SECTOR 02. FLIGHT LOGS</span>
+        <h2 class="section-title">Commander Dossier</h2>
+        <p class="section-description">Decrypted telemetry records detailing core engineering principles and flight milestones.</p>
+      </div>
+
+      <div class="about-grid">
+        <!-- Left Wing: Astronaut Identification Module -->
+        <article class="space-capsule dossier-card">
+          <div class="avatar-orbit-wrapper">
+            <div class="avatar-glow-ring" aria-hidden="true"></div>
+            <div class="avatar-core-circle">
+              <!-- Astronaut Vector Emblem -->
+              <svg class="avatar-icon-astronaut" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7Z"></path>
+                <path d="M9 12h6"></path>
+                <path d="M10 9a2 2 0 0 1 4 0"></path>
+                <path d="M8 21h8"></path>
+              </svg>
+            </div>
+          </div>
+
+          <h3 class="dossier-name">Commander Om</h3>
+          <div class="dossier-rank">LEAD ARCHITECT // EXPEDITION CORPS</div>
+
+          <div class="dossier-stats-list">
+            <div class="dossier-stat-row">
+              <span class="stat-label">ORIGIN COORDINATES</span>
+              <span class="stat-val">Sol-3 (Earth) / Remote</span>
+            </div>
+            <div class="dossier-stat-row">
+              <span class="stat-label">STATUS</span>
+              <span class="stat-val" style="color: var(--emerald-live);">Active Flight Ready</span>
+            </div>
+            <div class="dossier-stat-row">
+              <span class="stat-label">PRIMARY CORE</span>
+              <span class="stat-val">React • Canvas • TypeScript</span>
+            </div>
+            <div class="dossier-stat-row">
+              <span class="stat-label">COMMUNICATION FREQ</span>
+              <span class="stat-val">om.cosmic.dev@galaxy.orbit</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Right Wing: Cosmic Narrative & Orbital Metrics -->
+        <div class="dossier-content">
+          <h3>Pioneering the Frontiers of Interactive Web Architecture</h3>
+          <p>
+            For over half a decade, I have navigated the outer boundaries of frontend engineering. I bridge the gap between rigorous technical precision and mesmerizing artistic expression, treating every web application as a voyage of discovery.
+          </p>
+          <p>
+            Whether architecting hardware-accelerated HTML5 Canvas simulations, designing intuitive glassmorphic design systems, or tuning millisecond render cycles, my mission is singular: to build digital environments that captivate users and perform with unflinching reliability.
+          </p>
+
+          <!-- Orbital Metrics HUD Counter Modules -->
+          <div class="metrics-hud">
+            <div class="metric-module">
+              <div class="metric-icon-box" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div class="metric-data">
+                <div class="metric-number" data-target="5" data-prefix="+" data-suffix=" YRS">5+ YRS</div>
+                <div class="metric-title">Lightyears of Experience</div>
+              </div>
+            </div>
+
+            <div class="metric-module">
+              <div class="metric-icon-box" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+              <div class="metric-data">
+                <div class="metric-number" data-target="35" data-prefix="+" data-suffix=" MISSIONS">+35 MISSIONS</div>
+                <div class="metric-title">Successful Deployments</div>
+              </div>
+            </div>
+
+            <div class="metric-module">
+              <div class="metric-icon-box" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <div class="metric-data">
+                <div class="metric-number" data-target="99.9" data-suffix="%">99.9%</div>
+                <div class="metric-title">Quantum System Uptime</div>
+              </div>
+            </div>
+
+            <div class="metric-module">
+              <div class="metric-icon-box" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <div class="metric-data">
+                <div class="metric-number" data-target="150" data-prefix="+" data-suffix="k LOC">+150k LOC</div>
+                <div class="metric-title">Synthesized Clean Code</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PROJECTS SECTION (FLOATING NEBULA CAPSULES) -->
+    <section id="projects" class="section" aria-label="Projects Expeditions">
+      <div class="section-header">
+        <span class="section-tag">// SECTOR 03. EXPEDITIONS</span>
+        <h2 class="section-title">Orbital Expeditions</h2>
+        <p class="section-description">Interactive space capsule modules showcasing flagship missions, 3D simulations, and deep space web applications.</p>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="project-filter-bar" role="tablist" aria-label="Filter Missions by Category">
+        <button class="filter-pill active" data-category="all" role="tab" aria-selected="true">All Systems</button>
+        <button class="filter-pill" data-category="web" role="tab" aria-selected="false">Web Applications</button>
+        <button class="filter-pill" data-category="creative" role="tab" aria-selected="false">Creative &amp; 3D</button>
+        <button class="filter-pill" data-category="ai" role="tab" aria-selected="false">AI Systems</button>
+      </div>
+
+      <!-- Capsule Grid -->
+      <div class="projects-grid">
+        <!-- Project 1: Hyperion Nebula Analytics -->
+        <article class="space-capsule project-capsule project-capsule-item" data-category="web">
+          <div class="project-visual-banner">
+            <!-- Simulated futuristic SVG illustration -->
+            <svg class="project-banner-img" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="240" fill="#070c1e"/>
+              <circle cx="200" cy="120" r="80" stroke="#06b6d4" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.4"/>
+              <circle cx="200" cy="120" r="50" stroke="#a855f7" stroke-width="2" opacity="0.6"/>
+              <circle cx="200" cy="120" r="20" fill="#22d3ee" opacity="0.8"/>
+              <path d="M40 180 Q 120 80, 200 120 T 360 60" stroke="#22d3ee" stroke-width="3" fill="none"/>
+              <path d="M40 200 Q 150 140, 250 160 T 360 110" stroke="#a855f7" stroke-width="2" fill="none" opacity="0.6"/>
+              <circle cx="120" cy="98" r="4" fill="#ffffff"/>
+              <circle cx="280" cy="90" r="4" fill="#ffffff"/>
+            </svg>
+            <div class="scanline-overlay" aria-hidden="true"></div>
+            <div class="project-sector-badge">SECTOR: ANALYTICS</div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-heading">Hyperion Nebula Analytics</h3>
+            <p class="project-summary">
+              Next-generation telemetry dashboard visualizing petabyte-scale event streams with real-time WebGL particle graphs, sub-millisecond render updates, and glassmorphic telemetry cards.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag"><span class="tech-tag-dot"></span>React.js</span>
+              <span class="tech-tag"><span class="tech-tag-dot"></span>TypeScript</span>
+              <span class="tech-tag"><span class="tech-tag-dot"></span>Tailwind CSS</span>
+              <span class="tech-tag"><span class="tech-tag-dot"></span>WebGL</span>
+            </div>
+            <div class="project-links-row">
+              <a href="#projects" class="project-link-btn" title="Launch Demo">
+                <span>Flight Demo</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="View Source">
+                <span>Data Vault</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Stellaris AI Interface -->
+        <article class="space-capsule project-capsule project-capsule-item" data-category="ai">
+          <div class="project-visual-banner">
+            <svg class="project-banner-img" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="240" fill="#080e24"/>
+              <path d="M80 120 C 140 40, 260 200, 320 120" stroke="#a855f7" stroke-width="3" fill="none"/>
+              <path d="M80 120 C 140 200, 260 40, 320 120" stroke="#06b6d4" stroke-width="2" fill="none" opacity="0.8"/>
+              <circle cx="200" cy="120" r="35" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4 4"/>
+              <polygon points="200,95 220,135 180,135" fill="rgba(34,211,238,0.4)" stroke="#22d3ee" stroke-width="2"/>
+            </svg>
+            <div class="scanline-overlay" aria-hidden="true"></div>
+            <div class="project-sector-badge">SECTOR: ARTIFICIAL INTELLIGENCE</div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-heading">Stellaris AI Copilot</h3>
+            <p class="project-summary">
+              Cosmic autonomous assistant powered by LLM streaming, dynamic interactive neural audio waveforms, voice synthesis, and real-time contextual code generation.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag"><span class="tech-tag-dot"></span>Next.js</span>
+              <span class="tech-tag"><span class="tech-tag-dot"></span>Framer Motion</span>
+              <span class="tech-tag"><span class="tech-tag-dot"></span>Tailwind CSS</span>
+              <span class="tech-tag"><span class="tech-tag-dot"></span>Web Audio API</span>
+            </div>
+            <div class="project-links-row">
+              <a href="#projects" class="project-link-btn">
+                <span>Flight Demo</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                <span>Data Vault</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Orbitron 3D Planetary Engine -->
+        <article class="space-capsule project-capsule project-capsule-item" data-category="creative">
+          <div class="project-visual-banner">
+            <svg class="project-banner-img" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="240" fill="#060b1c"/>
+              <ellipse cx="200" cy="120" rx="140" ry="40" stroke="#22d3ee" stroke-width="2" opacity="0.7" transform="rotate(-15 200 120)"/>
+              <circle cx="200" cy="120" r="48" fill="url(#planetGrad)"/>
+              <defs>
+                <radialGradient id="planetGrad" cx="30%" cy="30%" r="70%">
+                  <stop offset="0%" stop-color="#67e8f9"/>
+                  <stop offset="60%" stop-color="#0891b2"/>
+                  <stop offset="100%" stop-color="#081026"/>
+                </radialGradient>
+              </defs>
+              <circle cx="310" cy="95" r="8" fill="#f59e0b"/>
+            </svg>
+            <div class="scanline-overlay" aria-hidden="true"></div>
+            <div class="project-sector-badge">SECTOR: 3D SIMULATION</div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-heading">Orbitron 3D Solar Sandbox</h3>
+            <p class="project-summary">
+              Interactive celestial mechanics simulator calculating gravitational N-body interactions, custom GLSL atmospheric scattering shaders, and real-time orbital trajectory paths.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag"><span class="tech-tag-dot"></span>Three.js</span>
+              <span class="tech-tag"><span class="tech-tag-dot"></span>GLSL Shaders</span>
+              <span class="tech-tag"><span class="tech-tag-dot"></span>Canvas API</span>
+              <span class="tech-tag"><span class="tech-tag-dot"></span>React</span>
+            </div>
+            <div class="project-links-row">
+              <a href="#projects" class="project-link-btn">
+                <span>Flight Demo</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                <span>Data Vault</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: Quantum Relay Protocol -->
+        <article class="space-capsule project-capsule project-capsule-item" data-category="web">
+          <div class="project-visual-banner">
+            <svg class="project-banner-img" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="240" fill="#080e22"/>
+              <rect x="60" y="60" width="80" height="120" rx="8" stroke="#06b6d4" stroke-width="1.5" fill="rgba(6,182,212,0.1)"/>
+              <rect x="260" y="60" width="80" height="120" rx="8" stroke="#a855f7" stroke-width="1.5" fill="rgba(168,85,247,0.1)"/>
+              <path d="M140 120 L 260 120" stroke="#22d3ee" stroke-width="3" stroke-dasharray="6 6"/>
+              <circle cx="200" cy="120" r="14" fill="#f59e0b" opacity="0.8"/>
+            </svg>
+            <div class="scanline-overlay" aria-hidden="true"></div>
+            <div class="project-sector-badge">SECTOR: DISTRIBUTED SYSTEMS</div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-heading">Quantum Relay Protocol</h3>
+            <p class="project-summary">
+              Ultra-fast peer-to-peer decentralized file transmitter utilizing WebRTC data channels, end-to-end cryptographic encryption, and zero-server transmission pipelines.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag"><span class="tech-tag-dot"></span>WebRTC</span>
+              <span class="tech-tag"><span class="tech-tag-dot"></span>React.js</span>
+              <span class="tech-tag"><span class="tech-tag-dot"></span>Node.js</span>
+              <span class="tech-tag"><span class="tech-tag-dot"></span>Cryptography</span>
+            </div>
+            <div class="project-links-row">
+              <a href="#projects" class="project-link-btn">
+                <span>Flight Demo</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                <span>Data Vault</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. SKILLS SECTION (ORBITAL ARSENAL & REACTOR CORES) -->
+    <section id="skills" class="section" aria-label="Skills Arsenal">
+      <div class="section-header">
+        <span class="section-tag">// SECTOR 04. ARSENAL</span>
+        <h2 class="section-title">Technical Reactor Cores</h2>
+        <p class="section-description">Core proficiencies categorized by orbital command clusters, equipped with real-time energy gauges.</p>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Cluster 1: Frontend Flight Controls -->
+        <div class="space-capsule skill-cluster-capsule">
+          <div class="cluster-header">
+            <div class="cluster-icon-shell" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <h3 class="cluster-title">Frontend Flight Deck</h3>
+          </div>
+          <div class="skills-list">
+            <div class="skill-item">
+              <div class="skill-meta"><span class="skill-name">React.js &amp; Next.js</span><span class="skill-pct">96%</span></div>
+              <div class="skill-gauge-track"><div class="skill-gauge-bar" style="width: 96%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta"><span class="skill-name">TypeScript</span><span class="skill-pct">92%</span></div>
+              <div class="skill-gauge-track"><div class="skill-gauge-bar" style="width: 92%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta"><span class="skill-name">Tailwind CSS &amp; Modern CSS</span><span class="skill-pct">98%</span></div>
+              <div class="skill-gauge-track"><div class="skill-gauge-bar" style="width: 98%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta"><span class="skill-name">HTML5 Semantic Architecture</span><span class="skill-pct">99%</span></div>
+              <div class="skill-gauge-track"><div class="skill-gauge-bar" style="width: 99%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cluster 2: Interactive Propulsion -->
+        <div class="space-capsule skill-cluster-capsule">
+          <div class="cluster-header">
+            <div class="cluster-icon-shell" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="m4.93 4.93 4.24 4.24"></path>
+                <path d="m14.83 9.17 4.24-4.24"></path>
+                <path d="m14.83 14.83 4.24 4.24"></path>
+                <path d="m9.17 14.83-4.24 4.24"></path>
+                <circle cx="12" cy="12" r="4"></circle>
+              </svg>
+            </div>
+            <h3 class="cluster-title">Motion &amp; Canvas Propulsion</h3>
+          </div>
+          <div class="skills-list">
+            <div class="skill-item">
+              <div class="skill-meta"><span class="skill-name">HTML5 Canvas API</span><span class="skill-pct">94%</span></div>
+              <div class="skill-gauge-track"><div class="skill-gauge-bar" style="width: 94%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta"><span class="skill-name">Framer Motion</span><span class="skill-pct">95%</span></div>
+              <div class="skill-gauge-track"><div class="skill-gauge-bar" style="width: 95%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta"><span class="skill-name">Three.js / WebGL</span><span class="skill-pct">85%</span></div>
+              <div class="skill-gauge-track"><div class="skill-gauge-bar" style="width: 85%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta"><span class="skill-name">Micro-Interactions &amp; Spring Physics</span><span class="skill-pct">95%</span></div>
+              <div class="skill-gauge-track"><div class="skill-gauge-bar" style="width: 95%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cluster 3: Core Systems & Infrastructure -->
+        <div class="space-capsule skill-cluster-capsule">
+          <div class="cluster-header">
+            <div class="cluster-icon-shell" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+                <path d="M7 7h10"></path>
+                <path d="M7 12h10"></path>
+                <path d="M7 17h10"></path>
+              </svg>
+            </div>
+            <h3 class="cluster-title">Systems &amp; Architecture</h3>
+          </div>
+          <div class="skills-list">
+            <div class="skill-item">
+              <div class="skill-meta"><span class="skill-name">Node.js &amp; Serverless APIs</span><span class="skill-pct">88%</span></div>
+              <div class="skill-gauge-track"><div class="skill-gauge-bar" style="width: 88%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta"><span class="skill-name">Vite, Webpack &amp; Tooling</span><span class="skill-pct">92%</span></div>
+              <div class="skill-gauge-track"><div class="skill-gauge-bar" style="width: 92%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta"><span class="skill-name">Git &amp; Deployment Pipelines</span><span class="skill-pct">93%</span></div>
+              <div class="skill-gauge-track"><div class="skill-gauge-bar" style="width: 93%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta"><span class="skill-name">Lighthouse &amp; FPS Optimization</span><span class="skill-pct">97%</span></div>
+              <div class="skill-gauge-track"><div class="skill-gauge-bar" style="width: 97%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cluster 4: Design & Holographic UX -->
+        <div class="space-capsule skill-cluster-capsule">
+          <div class="cluster-header">
+            <div class="cluster-icon-shell" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                <path d="M2 2l7.586 7.586"></path>
+                <circle cx="11" cy="11" r="2"></circle>
+              </svg>
+            </div>
+            <h3 class="cluster-title">Holographic UI/UX</h3>
+          </div>
+          <div class="skills-list">
+            <div class="skill-item">
+              <div class="skill-meta"><span class="skill-name">Figma Prototyping</span><span class="skill-pct">92%</span></div>
+              <div class="skill-gauge-track"><div class="skill-gauge-bar" style="width: 92%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta"><span class="skill-name">Glassmorphism &amp; Neumorphism</span><span class="skill-pct">98%</span></div>
+              <div class="skill-gauge-track"><div class="skill-gauge-bar" style="width: 98%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta"><span class="skill-name">Design Systems Architecture</span><span class="skill-pct">94%</span></div>
+              <div class="skill-gauge-track"><div class="skill-gauge-bar" style="width: 94%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta"><span class="skill-name">Accessibility (WCAG AAA)</span><span class="skill-pct">96%</span></div>
+              <div class="skill-gauge-track"><div class="skill-gauge-bar" style="width: 96%;"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. CONTACT SECTION (SUBSPACE TRANSMISSION RELAY) -->
+    <section id="contact" class="section" aria-label="Contact Subspace Relay">
+      <div class="section-header">
+        <span class="section-tag">// SECTOR 05. TRANSMISSION</span>
+        <h2 class="section-title">Subspace Transmission Relay</h2>
+        <p class="section-description">Initialize quantum contact coordinates for collaborations, mission contracts, or technical inquiries.</p>
+      </div>
+
+      <div class="contact-layout">
+        <!-- Left Console: Telemetry & Social Satellites -->
+        <div class="space-capsule contact-telemetry-console">
+          <!-- Availability Signal -->
+          <div class="telemetry-status-box">
+            <span class="status-dot-green"></span>
+            <span>BEACON ACTIVE: ACCEPTING NEW MISSIONS &amp; ROLES</span>
+          </div>
+
+          <!-- Direct Frequency Card -->
+          <div class="subspace-channel-card">
+            <div class="channel-info">
+              <span class="channel-label">SUBSPACE COMM FREQUENCY</span>
+              <span class="channel-value">om.cosmic.dev@galaxy.orbit</span>
+            </div>
+            <button id="copy-email-btn" class="copy-btn" data-email="om.cosmic.dev@galaxy.orbit" aria-label="Copy Subspace Frequency">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+                <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+              </svg>
+              <span>COPY</span>
+            </button>
+          </div>
+
+          <!-- Orbital Coordinates & Response Time -->
+          <div style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--starlight-dim); line-height: 1.8;">
+            <div>⏱️ <strong style="color: var(--starlight);">RESPONSE TIME:</strong> &lt; 24 Light Hours</div>
+            <div>📍 <strong style="color: var(--starlight);">ORBIT LOCATION:</strong> Remote Worldwide / Space Station Sol-3</div>
+            <div>🛡️ <strong style="color: var(--starlight);">ENCRYPTION:</strong> 4096-bit Quantum Asymmetric</div>
+          </div>
+
+          <!-- Social Satellites -->
+          <div>
+            <div class="channel-label" style="margin-bottom: 0.75rem;">CONNECTED REPOSITORY NODES</div>
+            <div class="social-satellites">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-orb-btn" aria-label="GitHub Data Vault" title="GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-orb-btn" aria-label="LinkedIn Professional Network" title="LinkedIn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-orb-btn" aria-label="Twitter Interstellar Feed" title="Twitter / X">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Console: Subspace Form Console -->
+        <article class="space-capsule">
+          <form id="transmission-form" class="transmission-form-console" autocomplete="off">
+            <div class="form-group">
+              <label for="explorer-name" class="form-label">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span>EXPLORER CALLSIGN / NAME</span>
+              </label>
+              <input type="text" id="explorer-name" class="form-input" placeholder="e.g. Commander Sarah Vance" required>
+            </div>
+
+            <div class="form-group">
+              <label for="explorer-email" class="form-label">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                <span>SUBSPACE TRANSMISSION FREQUENCY (EMAIL)</span>
+              </label>
+              <input type="email" id="explorer-email" class="form-input" placeholder="e.g. sarah.vance@interstellar.net" required>
+            </div>
+
+            <div class="form-group">
+              <label for="mission-subject" class="form-label">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <span>MISSION CLASSIFICATION (SUBJECT)</span>
+              </label>
+              <input type="text" id="mission-subject" class="form-input" placeholder="e.g. Frontend Architecture Mission / Contract Exploration" required>
+            </div>
+
+            <div class="form-group">
+              <label for="transmission-body" class="form-label">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                <span>TRANSMISSION ENCRYPTED PAYLOAD (MESSAGE)</span>
+              </label>
+              <textarea id="transmission-body" class="form-textarea" placeholder="Detail your project scope, mission timeline, and target orbit..." required></textarea>
+            </div>
+
+            <button type="submit" class="cosmic-btn cosmic-btn-primary" style="width: 100%; padding: 1rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+              <span>TRANSMIT INTERSTELLAR SIGNAL</span>
+            </button>
+          </form>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER & TELEMETRY CLOCK -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="app-container footer-inner">
+      <div class="footer-telemetry">
+        <div id="galactic-stardate" class="footer-stardate">STARDATE: 2026.1027 // SECTOR-001 // SOL-3</div>
+        <div class="footer-copy">&copy; 2026 OM. Engineered with React, Vite, Tailwind CSS, Framer Motion, and HTML5 Canvas.</div>
+      </div>
+
+      <div>
+        <a href="#hero" class="cosmic-btn cosmic-btn-outline cosmic-btn-sm" aria-label="Jump to top of atmosphere">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+          <span>PROPULSION JUMP TO TOP</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/canvas.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+
